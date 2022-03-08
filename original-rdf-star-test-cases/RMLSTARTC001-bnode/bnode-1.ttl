@@ -5,6 +5,7 @@
 @prefix ex: <http://example/> .
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
+
 :firstTM a rml:TriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
@@ -17,7 +18,7 @@
     rr:predicateObjectMap [
         rr:predicate ex:p ;
         rml:objectMap [
-            rr:template "http://example/{c3}"
+            rr:template "http://example/{c2}"
         ]
     ] .
 
@@ -32,6 +33,6 @@
     rr:predicateObjectMap [
         rr:predicate ex:q ;
         rml:objectMap [
-            rml:reference "c5"
+            rml:reference "c3"
         ]
     ] .
