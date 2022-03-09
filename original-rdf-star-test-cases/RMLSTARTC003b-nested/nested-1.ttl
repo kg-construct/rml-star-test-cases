@@ -8,22 +8,22 @@
 @base <http://example.org/> .
 :firstTM a rml:TriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data1.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-        rr:template "http://example/{c1}"
+        rr:template "http://example/{c1-1}"
     ];
     rr:predicateObjectMap [
         rr:predicate ex:p ;
         rml:objectMap [
-            rr:template "http://example/{c2}"
+            rr:template "http://example/{c1-2}"
         ]
     ] .
 
 :secondTM a rml:TriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data1.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
@@ -32,22 +32,26 @@
     rr:predicateObjectMap [
         rr:predicate ex:r ;
         rml:objectMap [
-            rr:template "http://example/{c3}"
+            rr:template "http://example/{c1-3}"
         ]
     ] .
 
 :thirdTM a rml:TriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data2.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-        rml:quotedTriplesMap :secondTM
+        rml:quotedTriplesMap :secondTM;
+        rr:joinCondition [
+          rr:child "c2-2" ;
+          rr:parent "c1-4" ;
+        ];
     ];
     rr:predicateObjectMap [
         rr:predicate ex:q ;
         rml:objectMap [
-            rml:reference "c4" ;
+            rml:reference "c2-1" ;
             rr:datatype xsd:integer
         ]
     ] .
