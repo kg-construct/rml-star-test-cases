@@ -35,8 +35,8 @@
         rml:objectMap [
             rml:quotedTriplesMap :firstTM ;
             rr:joinCondition [
-              rr:parent "c2-2" ;
-              rr:child "c1-3" ;
+              rr:child "c2-2" ;
+              rr:parent "c1-3" ;
             ];
         ]
     ] .
