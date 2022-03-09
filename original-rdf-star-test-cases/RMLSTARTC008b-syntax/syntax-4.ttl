@@ -8,22 +8,22 @@
 @base <http://example.org/> .
 :elementaryTM1 a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data1.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-        rr:template "http://example/{c1}"
+        rr:template "http://example/{c1-1}"
     ];
     rr:predicateObjectMap [
         rr:predicate ex:p1 ;
         rml:objectMap [
-            rr:template "http://example/{c2}"
+            rr:template "http://example/{c1-2}"
         ]
     ] .
 
 :firstJoinTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data1.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
@@ -38,26 +38,30 @@
 
 :elementaryTM2 a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data1.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-        rr:template "http://example/{c3}"
+        rr:template "http://example/{c1-3}"
     ];
     rr:predicateObjectMap [
         rr:predicate ex:p2 ;
         rml:objectMap [
-            rr:template "http://example/{c4}"
+            rr:template "http://example/{c1-4}"
         ]
     ] .
 
 :centralJoinTM a rml:TriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data2.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-            rml:quotedTriplesMap :firstJoinTM
+            rml:quotedTriplesMap :firstJoinTM ;
+            rr:joinCondition [
+              rr:child "c2-5" ;
+              rr:parent "c1-5" ;
+            ];
     ];
     rr:predicateObjectMap [
         rr:predicate ex:q2;
@@ -68,22 +72,22 @@
 
 :elementaryTM3 a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data2.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-        rr:template "http://example/{c5}"
+        rr:template "http://example/{c2-1}"
     ];
     rr:predicateObjectMap [
         rr:predicate ex:p3 ;
         rml:objectMap [
-            rr:template "http://example/{c6}"
+            rr:template "http://example/{c2-2}"
         ]
     ] .
 
 :secondJoinTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data2.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
@@ -98,15 +102,15 @@
 
 :elementaryTM4 a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source "data2.csv";
         rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-        rr:template "http://example/{c7}"
+        rr:template "http://example/{c2-3}"
     ];
     rr:predicateObjectMap [
         rr:predicate ex:p4 ;
         rml:objectMap [
-            rr:template "http://example/{c8}"
+            rr:template "http://example/{c2-4}"
         ]
     ] .
