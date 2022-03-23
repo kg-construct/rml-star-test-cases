@@ -21,7 +21,7 @@
         ]
     ] .
 
-:secondTM a rml:TriplesMap ; # This refers to the x statement in the rdf-star
+:secondTM a rr:TriplesMap ; # This refers to the x statement in the rdf-star
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation ql:CSV
