@@ -9,4 +9,4 @@ In the folder test-cases you can find the different test cases. Each test case i
 Each RDF-star test case is transformed to two different RML-star test-cases: RMLSTARTCXXXa cases do not contain joins among sources, while RMLSTARTCXXXb cases do.
 
 ## License
-This code is copyrighted under the Creative Commons Attribution 4.0 International License.
+This code is copyrighted under the Apache 2.0 License
