@@ -10,47 +10,93 @@
 
 :predicationSubject a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION"
+        rr:tableName "PREDICATION_VIEW"
     ];
     rml:subjectMap [
         rr:template "http://semmeddb.com/predication/{PREDICATION_ID}"
     ];
 
     rr:predicateObjectMap [
-        rr:predicate  sem:subject;
+        rr:predicate [
+            rr:template "sem:subject{PREDICATION_ID}" ;
+        ];
         rml:objectMap [
             rr:template "http://semmeddb.com/subject-predication/{SUBJECT_NAME}";
             rr:termType rr:IRI;
-        ] 
+        ]
     ] .
 
 :predicationObject a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION"
+        rr:tableName "PREDICATION_VIEW"
     ];
     rml:subjectMap [
         rr:template "http://semmeddb.com/predication/{PREDICATION_ID}"
     ];
 
     rr:predicateObjectMap [
-        rr:predicate  sem:object;
+        rr:predicate [
+            rr:template "sem:object{PREDICATION_ID}" ;
+        ];
         rml:objectMap [
             rr:template "http://semmeddb.com/object-predication/{OBJECT_NAME}";
             rr:termType rr:IRI;
-        ] 
+        ]
     ]
-. 
+.
+
+:timeSubject a rr:TriplesMap ;
+    rr:logicalTable [
+        rr:tableName "PREDICATION_AUX_VIEW"
+    ];
+    rml:subjectMap [
+        rr:template "sem:subject{PREDICATION_ID}" ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate sem:timestamp ;
+        rml:objectMap [
+            rml:reference "CURR_TIMESTAMP"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:singletonPropertyOf ;
+        rml:objectMap [
+            rr:constant sem:subject ;
+        ]
+    ] .
+
+:timeObjet a rr:TriplesMap ;
+    rr:logicalTable [
+        rr:tableName "PREDICATION_AUX_VIEW"
+    ];
+    rml:subjectMap [
+        rr:template "sem:object{PREDICATION_ID}" ;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate sem:timestamp ;
+        rml:objectMap [
+            rml:reference "CURR_TIMESTAMP"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:singletonPropertyOf ;
+        rml:objectMap [
+            rr:constant sem:object ;
+        ]
+    ] .
 
 :subject a rr:TriplesMap, rml:NonAssertedTriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION"
+        rr:tableName "PREDICATION_VIEW"
     ];
     rml:subjectMap [
-        rr:template "http://semmeddb.com/subject-predication/{SUBJECT_NAME}" 
+        rr:template "http://semmeddb.com/subject-predication/{SUBJECT_NAME}"
     ];
 
     rr:predicateObjectMap [
-        rr:predicate  sem:semanticType;
+        rr:predicate [
+            rr:template "sem:semanticType{PREDICATION_ID}-subject" ;
+        ];
         rml:objectMap [
             rml:reference "SUBJECT_SEMTYPE"
         ]
@@ -58,14 +104,16 @@
 
 :object a rr:TriplesMap,rml:NonAssertedTriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION"
+        rr:tableName "PREDICATION_VIEW"
     ];
     rml:subjectMap [
-        rr:template "http://semmeddb.com/object-predication/{OBJECT_NAME}" 
+        rr:template "http://semmeddb.com/object-predication/{OBJECT_NAME}"
     ];
 
     rr:predicateObjectMap [
-        rr:predicate  sem:semanticType;
+        rr:predicate  [
+            rr:template "sem:semanticType{PREDICATION_ID}-object" ;
+        ];
         rml:objectMap [
             rml:reference "OBJECT_SEMTYPE"
         ]
@@ -74,78 +122,47 @@
 
 :subjectScore a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_AUX"
+        rr:tableName "PREDICATION_AUX_VIEW"
     ];
     rml:subjectMap [
-        rml:quotedTriplesMap :subject;
-        rr:joinCondition [
-          rr:child "PREDICATION_ID" ;
-          rr:parent "PREDICATION_ID" ;
-        ];
+        rr:template "sem:semanticType{PREDICATION_ID}-subject" ;
     ];
     rr:predicateObjectMap [
         rr:predicate sem:score ;
         rml:objectMap [
             rml:reference "SUBJECT_SCORE"
         ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:singletonPropertyOf ;
+        rml:objectMap [
+            rr:constant sem:semanticType ;
+        ]
     ] .
 
 
 :objectScore a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_AUX"
+        rr:tableName "PREDICATION_AUX_VIEW"
     ];
     rml:subjectMap [
-        rml:quotedTriplesMap :object;
-        rr:joinCondition [
-          rr:child "PREDICATION_ID" ;
-          rr:parent "PREDICATION_ID" ;
-        ];
+        rr:template "sem:semanticType{PREDICATION_ID}-object" ;
     ];
     rr:predicateObjectMap [
         rr:predicate sem:score ;
         rml:objectMap [
             rml:reference "OBJECT_SCORE"
         ]
-    ] .
-
-:timeSubject a rr:TriplesMap ;
-    rr:logicalTable [
-        rr:tableName "PREDICATION_AUX"
-    ];
-    rml:subjectMap [
-        rml:quotedTriplesMap :predicationSubject;
-        rr:joinCondition [
-          rr:child "PREDICATION_ID" ;
-          rr:parent "PREDICATION_ID" ;
-        ];
     ];
     rr:predicateObjectMap [
-        rr:predicate sem:timestamp ;
+        rr:predicate rdf:singletonPropertyOf ;
         rml:objectMap [
-            rml:reference "CURR_TIMESTAMP"
+            rr:constant sem:semanticType ;
         ]
     ] .
 
-:timeObject a rr:TriplesMap ;
-    rr:logicalTable [
-        rr:tableName "PREDICATION_AUX"
-    ];
-    rml:subjectMap [
-        rml:quotedTriplesMap :predicationObject;
-        rr:joinCondition [
-          rr:child "PREDICATION_ID" ;
-          rr:parent "PREDICATION_ID" ;
-        ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate sem:timestamp ;
-        rml:objectMap [
-            rml:reference "CURR_TIMESTAMP"
-        ]
-    ] .
 
-:entity a rr:TriplesMap, rml:NonAssertedTriplesMap ;
+:entity a rr:TriplesMap ;
     rr:logicalTable [
         rr:tableName "ENTITY"
     ];
@@ -154,9 +171,11 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate  sem:semanticType;
+        rr:predicateMap  [
+            rr:template "sem:semanticType{ENTITY_ID}" ;
+        ];
         rml:objectMap [
-            rml:reference "SEMTYPE"
+            rml:reference "TYPE" ;
         ]
     ] .
 
@@ -165,11 +184,17 @@
         rr:tableName "ENTITY"
     ];
     rml:subjectMap [
-        rml:quotedTriplesMap :entity;
+        rr:template "sem:semanticType{ENTITY_ID}" ;
     ];
     rr:predicateObjectMap [
         rr:predicate sem:score ;
         rml:objectMap [
             rml:reference "SCORE"
+        ]
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:singletonPropertyOf ;
+        rml:objectMap [
+            rr:constant sem:semanticType ;
         ]
     ] .
