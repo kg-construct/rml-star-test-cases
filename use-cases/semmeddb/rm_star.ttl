@@ -41,7 +41,7 @@
     ]
 . 
 
-:subject a rr:TriplesMap, rml:NonAssertedTriplesMap ;
+:subject a rr:TriplesMap ;
     rr:logicalTable [
         rr:tableName "PREDICATION"
     ];
@@ -56,7 +56,7 @@
         ]
     ] .
 
-:object a rr:TriplesMap,rml:NonAssertedTriplesMap ;
+:object a rr:TriplesMap ;
     rr:logicalTable [
         rr:tableName "PREDICATION"
     ];
@@ -145,7 +145,7 @@
         ]
     ] .
 
-:entity a rr:TriplesMap, rml:NonAssertedTriplesMap ;
+:entity a rr:TriplesMap ;
     rr:logicalTable [
         rr:tableName "ENTITY"
     ];
