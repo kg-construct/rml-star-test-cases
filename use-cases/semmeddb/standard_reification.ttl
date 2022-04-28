@@ -10,7 +10,7 @@
 
 :predicationSubject a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_VIEW"
+        rr:tableName "PREDICATION"
     ];
     rml:subjectMap [
         rr:template "{PREDICATION_ID}" ;
@@ -40,7 +40,7 @@
 
 :predicationObject a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_VIEW"
+        rr:tableName "PREDICATION"
     ];
     rml:subjectMap [
         rr:template "{PREDICATION_ID}" ;
@@ -72,7 +72,7 @@
 
 :timeSubject a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_AUX_VIEW"
+        rr:tableName "PREDICATION_AUX"
     ];
     rml:subjectMap [
         rr:template "{PREDICATION_ID}" ;
@@ -88,7 +88,7 @@
 
 :timeObject a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_AUX_VIEW"
+        rr:tableName "PREDICATION_AUX"
     ];
     rml:subjectMap [
         rr:template "{PREDICATION_ID}" ;
@@ -104,7 +104,7 @@
 
 :subject a rr:TriplesMap, rml:NonAssertedTriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_VIEW"
+        rr:tableName "PREDICATION"
     ];
     rml:subjectMap [
         rr:template "{PREDICATION_ID}-subject" ;
@@ -133,7 +133,7 @@
 
 :object a rr:TriplesMap,rml:NonAssertedTriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_VIEW"
+        rr:tableName "PREDICATION"
     ];
     rml:subjectMap [
         rr:template "{PREDICATION_ID}-object" ;
@@ -163,7 +163,7 @@
 
 :subjectScore a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_AUX_VIEW"
+        rr:tableName "PREDICATION_AUX"
     ];
     rml:subjectMap [
         rr:template "{PREDICATION_ID}-subject" ;
@@ -181,7 +181,7 @@
 
 :objectScore a rr:TriplesMap ;
     rr:logicalTable [
-        rr:tableName "PREDICATION_AUX_VIEW"
+        rr:tableName "PREDICATION_AUX"
     ];
     rml:subjectMap [
         rr:template "{PREDICATION_ID}-object" ;
@@ -220,7 +220,7 @@
     rr:predicateObjectMap [
         rr:predicate rdf:object ;
         rml:objectMap [
-            rml:reference "TYPE" ;
+            rml:reference "SEMTYPE" ;
         ]
     ];
     rr:predicateObjectMap [
