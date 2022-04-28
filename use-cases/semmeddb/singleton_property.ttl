@@ -17,8 +17,8 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate [
-            rr:template "sem:subject{PREDICATION_ID}" ;
+        rr:predicateMap [
+            rr:template "http://semmeddb.com/subject{PREDICATION_ID}" ;
         ];
         rml:objectMap [
             rr:template "http://semmeddb.com/subject-predication/{SUBJECT_NAME}";
@@ -35,8 +35,8 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate [
-            rr:template "sem:object{PREDICATION_ID}" ;
+        rr:predicateMap [
+            rr:template "http://semmeddb.com/object{PREDICATION_ID}" ;
         ];
         rml:objectMap [
             rr:template "http://semmeddb.com/object-predication/{OBJECT_NAME}";
@@ -50,7 +50,7 @@
         rr:tableName "PREDICATION_AUX"
     ];
     rml:subjectMap [
-        rr:template "sem:subject{PREDICATION_ID}" ;
+        rr:template "http://semmeddb.com/subject{PREDICATION_ID}" ;
     ];
     rr:predicateObjectMap [
         rr:predicate sem:timestamp ;
@@ -70,7 +70,7 @@
         rr:tableName "PREDICATION_AUX"
     ];
     rml:subjectMap [
-        rr:template "sem:object{PREDICATION_ID}" ;
+        rr:template "http://semmeddb.com/object{PREDICATION_ID}" ;
     ];
     rr:predicateObjectMap [
         rr:predicate sem:timestamp ;
@@ -94,8 +94,8 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate [
-            rr:template "sem:semanticType{PREDICATION_ID}-subject" ;
+        rr:predicateMap [
+            rr:template "http://semmeddb.com/semanticType{PREDICATION_ID}-subject" ;
         ];
         rml:objectMap [
             rml:reference "SUBJECT_SEMTYPE"
@@ -111,8 +111,8 @@
     ];
 
     rr:predicateObjectMap [
-        rr:predicate  [
-            rr:template "sem:semanticType{PREDICATION_ID}-object" ;
+        rr:predicateMap [
+            rr:template "http://semmeddb.com/semanticType{PREDICATION_ID}-object" ;
         ];
         rml:objectMap [
             rml:reference "OBJECT_SEMTYPE"
@@ -125,7 +125,7 @@
         rr:tableName "PREDICATION_AUX"
     ];
     rml:subjectMap [
-        rr:template "sem:semanticType{PREDICATION_ID}-subject" ;
+        rr:template "http://semmeddb.com/semanticType{PREDICATION_ID}-subject" ;
     ];
     rr:predicateObjectMap [
         rr:predicate sem:score ;
@@ -146,7 +146,7 @@
         rr:tableName "PREDICATION_AUX"
     ];
     rml:subjectMap [
-        rr:template "sem:semanticType{PREDICATION_ID}-object" ;
+        rr:template "http://semmeddb.com/semanticType{PREDICATION_ID}-object" ;
     ];
     rr:predicateObjectMap [
         rr:predicate sem:score ;
@@ -172,7 +172,7 @@
 
     rr:predicateObjectMap [
         rr:predicateMap  [
-            rr:template "sem:semanticType{ENTITY_ID}" ;
+            rr:template "http://semmeddb.com/semanticType{ENTITY_ID}" ;
         ];
         rml:objectMap [
             rml:reference "SEMTYPE" ;
@@ -184,7 +184,7 @@
         rr:tableName "ENTITY"
     ];
     rml:subjectMap [
-        rr:template "sem:semanticType{ENTITY_ID}" ;
+        rr:template "http://semmeddb.com/semanticType{ENTITY_ID}" ;
     ];
     rr:predicateObjectMap [
         rr:predicate sem:score ;
