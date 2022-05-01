@@ -25,7 +25,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#description_{description.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#description_{owner.excerpt}-{name.excerpt}-{description.technique}" ;
         ];
         rml:objectMap [
             rml:reference "description.excerpt" ;
@@ -34,7 +34,7 @@
     ].
 
 :descriptionMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#description_{description.technique}" ; ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#description_{owner.excerpt}-{name.excerpt}-{description.technique}" ; ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -51,7 +51,7 @@
    rml:subjectMap :soft;
    rr:predicateObjectMap [
        rr:predicateMap  [
-           rr:template "https://w3id.org/okn/o/sd#citation_{citation.technique}" ;
+           rr:template "https://w3id.org/okn/o/sd#citation_{owner.excerpt}-{name.excerpt}-{citation.technique}" ;
        ];
        rml:objectMap [
            rml:reference "citation.excerpt" ;
@@ -60,7 +60,7 @@
    ].
 
 :citationMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#citation_{citation.technique}" ; ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#citation_{owner.excerpt}-{name.excerpt}-{citation.technique}" ; ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -78,7 +78,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasSupportScriptLocation_{hasScriptFile.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasSupportScriptLocation_{owner.excerpt}-{name.excerpt}-{hasScriptFile.technique}" ;
         ];
         rml:objectMap [
             rml:reference "hasScriptFile.excerpt" ;
@@ -87,7 +87,7 @@
     ].
 
 :hasScriptFileMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasSupportScriptLocation_{hasScriptFile.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasSupportScriptLocation_{owner.excerpt}-{name.excerpt}-{hasScriptFile.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -104,7 +104,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasAcknowledgments_{acknowledgement.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasAcknowledgments_{owner.excerpt}-{name.excerpt}-{acknowledgement.technique}" ;
         ];
         rml:objectMap [
             rml:reference "acknowledgement.excerpt" ;
@@ -113,7 +113,7 @@
     ].
 
 :hasAcksMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasAcknowledgments_{acknowledgement.technique}" ; ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasAcknowledgments_{owner.excerpt}-{name.excerpt}-{acknowledgement.technique}" ; ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -131,7 +131,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasInstallationInstructions_{installation.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasInstallationInstructions_{owner.excerpt}-{name.excerpt}-{installation.technique}" ;
         ];
         rml:objectMap [
             rml:reference "installation.excerpt" ;
@@ -140,7 +140,7 @@
     ].
 
 :installMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasInstallationInstructions_{installation.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasInstallationInstructions_{owner.excerpt}-{name.excerpt}-{installation.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -157,7 +157,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasExecutionCommand_{run.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasExecutionCommand_{owner.excerpt}-{name.excerpt}-{run.technique}" ;
         ];
         rml:objectMap [
             rml:reference "run.excerpt" ;
@@ -166,7 +166,7 @@
     ].
 
 :hasExecutionCommandMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutionCommand_{run.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutionCommand_{owner.excerpt}-{name.excerpt}-{run.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -183,7 +183,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasExecutionCommand_{invocation.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasExecutionCommand_{owner.excerpt}-{name.excerpt}-{invocation.technique}" ;
         ];
         rml:objectMap [
             rml:reference "invocation.excerpt" ;
@@ -192,7 +192,7 @@
     ].
 
 :hasExecutionCommand2MetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutionCommand_{invocation.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutionCommand_{owner.excerpt}-{name.excerpt}-{invocation.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -209,7 +209,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasUsageNotes_{usage.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasUsageNotes_{owner.excerpt}-{name.excerpt}-{usage.technique}" ;
         ];
         rml:objectMap [
             rml:reference "usage.excerpt" ;
@@ -218,7 +218,7 @@
     ].
 
 :hasUsageNotesMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasUsageNotes_{usage.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasUsageNotes_{owner.excerpt}-{name.excerpt}-{usage.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -235,7 +235,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasDownloadUrl_{downloadUrl.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasDownloadUrl_{owner.excerpt}-{name.excerpt}-{downloadUrl.technique}" ;
         ];
         rml:objectMap [
             rml:reference "downloadUrl.excerpt" ;
@@ -244,7 +244,7 @@
     ].
 
 :hasDownloadURLMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasDownloadUrl_{downloadUrl.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasDownloadUrl_{owner.excerpt}-{name.excerpt}-{downloadUrl.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -261,7 +261,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#softwareRequirements_{requirement.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#softwareRequirements_{owner.excerpt}-{name.excerpt}-{requirement.technique}" ;
         ];
         rml:objectMap [
             rml:reference "requirement.excerpt" ;
@@ -270,7 +270,7 @@
     ].
 
 :requirementMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#softwareRequirements_{requirement.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#softwareRequirements_{owner.excerpt}-{name.excerpt}-{requirement.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -287,7 +287,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#contactDetails_{contact.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#contactDetails_{owner.excerpt}-{name.excerpt}-{contact.technique}" ;
         ];
         rml:objectMap [
             rml:reference "contact.excerpt" ;
@@ -296,7 +296,7 @@
     ].
 
 :contactMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#contactDetails_{contact.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#contactDetails_{owner.excerpt}-{name.excerpt}-{contact.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -313,7 +313,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#supportDetails_{support.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#supportDetails_{owner.excerpt}-{name.excerpt}-{support.technique}" ;
         ];
         rml:objectMap [
             rml:reference "support.excerpt" ;
@@ -322,7 +322,7 @@
     ].
 
 :supportDetailsMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#supportDetails_{support.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#supportDetails_{owner.excerpt}-{name.excerpt}-{support.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -350,7 +350,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#license_{license.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#license_{owner.excerpt}-{name.excerpt}-{license.technique}" ;
         ];
         rml:objectMap [
             rml:reference "license.excerpt.url" ;
@@ -359,7 +359,7 @@
     ].
 
 :licenseMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#license_{license.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#license_{owner.excerpt}-{name.excerpt}-{license.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -376,7 +376,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#license_{licenseFile.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#license_{owner.excerpt}-{name.excerpt}-{licenseFile.technique}" ;
         ];
         rml:objectMap [
             rml:reference "licenseFile.excerpt" ;
@@ -385,7 +385,7 @@
     ].
 
 :licenseFileMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#license_{licenseFile.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#license_{owner.excerpt}-{name.excerpt}-{licenseFile.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -403,7 +403,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#licenseText_{licenseText.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#licenseText_{owner.excerpt}-{name.excerpt}-{licenseText.technique}" ;
         ];
         rml:objectMap [
             rml:reference "licenseText.excerpt" ;
@@ -412,7 +412,7 @@
     ].
 
 :licenseTextMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#licenseText_{licenseText.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#licenseText_{owner.excerpt}-{name.excerpt}-{licenseText.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -430,7 +430,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasFAQ_{faq.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasFAQ_{owner.excerpt}-{name.excerpt}-{faq.technique}" ;
         ];
         rml:objectMap [
             rml:reference "faq.excerpt" ;
@@ -439,7 +439,7 @@
     ].
 
 :hasFAQMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasFAQ_{faq.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasFAQ_{owner.excerpt}-{name.excerpt}-{faq.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -456,7 +456,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasExecutableNotebook_{executableExample.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasExecutableNotebook_{owner.excerpt}-{name.excerpt}-{executableExample.technique}" ;
         ];
         rml:objectMap [
             rml:reference "executableExample.excerpt" ;
@@ -465,7 +465,7 @@
     ].
 
 :hasExecutableExampleMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutableNotebook_{executableExample.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutableNotebook_{owner.excerpt}-{name.excerpt}-{executableExample.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -483,7 +483,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasExample_{hasExecutableNotebook.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasExample_{owner.excerpt}-{name.excerpt}-{hasExecutableNotebook.technique}" ;
         ];
         rml:objectMap [
             rml:reference "hasExecutableNotebook.excerpt" ;
@@ -492,7 +492,7 @@
     ].
 
 :hasExampleMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExample_{hasExecutableNotebook.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExample_{owner.excerpt}-{name.excerpt}-{hasExecutableNotebook.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -509,7 +509,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasCodeOfConduct_{codeOfConduct.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasCodeOfConduct_{owner.excerpt}-{name.excerpt}-{codeOfConduct.technique}" ;
         ];
         rml:objectMap [
             rml:reference "codeOfConduct.excerpt" ;
@@ -518,7 +518,7 @@
     ].
 
 :hasCodeOfConductMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasCodeOfConduct_{codeOfConduct.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasCodeOfConduct_{owner.excerpt}-{name.excerpt}-{codeOfConduct.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -535,7 +535,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#dateCreated_{dateCreated.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#dateCreated_{owner.excerpt}-{name.excerpt}-{dateCreated.technique}" ;
         ];
         rml:objectMap [
             rml:reference "dateCreated.excerpt" ;
@@ -544,7 +544,7 @@
     ].
 
 :dateCreatedMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#dateCreated_{dateCreated.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#dateCreated_{owner.excerpt}-{name.excerpt}-{dateCreated.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -561,7 +561,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#dateModified_{dateModified.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#dateModified_{owner.excerpt}-{name.excerpt}-{dateModified.technique}" ;
         ];
         rml:objectMap [
             rml:reference "dateModified.excerpt" ;
@@ -570,7 +570,7 @@
     ].
 
 :dateModifiedMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#dateModified_{dateModified.technique}"] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#dateModified_{owner.excerpt}-{name.excerpt}-{dateModified.technique}"] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -588,7 +588,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasDocumentation_{hasDocumentation.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasDocumentation_{owner.excerpt}-{name.excerpt}-{hasDocumentation.technique}" ;
         ];
         rml:objectMap [
             rml:reference "hasDocumentation.excerpt" ;
@@ -597,7 +597,7 @@
     ].
 
 :hasDocumentationTMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasDocumentation_{hasDocumentation.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasDocumentation_{owner.excerpt}-{name.excerpt}-{hasDocumentation.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -615,7 +615,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasBuildFile_{hasBuildFile.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasBuildFile_{owner.excerpt}-{name.excerpt}-{hasBuildFile.technique}" ;
         ];
         rml:objectMap [
             rml:reference "hasBuildFile.excerpt" ;
@@ -624,7 +624,7 @@
     ].
 
 :hasBuildFileMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasBuildFile_{hasBuildFile.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasBuildFile_{owner.excerpt}-{name.excerpt}-{hasBuildFile.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -642,7 +642,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#identifier_{identifier.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#identifier_{owner.excerpt}-{name.excerpt}-{identifier.technique}" ;
         ];
         rml:objectMap [
             rml:reference "identifier.excerpt" ;
@@ -651,7 +651,7 @@
     ].
 
 :identifierMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#identifier_{identifier.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#identifier_{owner.excerpt}-{name.excerpt}-{identifier.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -669,7 +669,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#issueTracker_{issueTracker.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#issueTracker_{owner.excerpt}-{name.excerpt}-{issueTracker.technique}" ;
         ];
         rml:objectMap [
             rml:reference "issueTracker.excerpt" ;
@@ -678,7 +678,7 @@
     ].
 
 :issueTrackerrMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#issueTracker_{issueTracker.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#issueTracker_{owner.excerpt}-{name.excerpt}-{issueTracker.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -696,7 +696,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasLongName_{long_title.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasLongName_{owner.excerpt}-{name.excerpt}-{long_title.technique}" ;
         ];
         rml:objectMap [
             rml:reference "long_title.excerpt" ;
@@ -705,7 +705,7 @@
     ].
 
 :longNameMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasLongName_{long_title.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasLongName_{owner.excerpt}-{name.excerpt}-{long_title.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -723,7 +723,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#readme_{readmeUrl.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#readme_{owner.excerpt}-{name.excerpt}-{readmeUrl.technique}" ;
         ];
         rml:objectMap [
             rml:reference "readmeUrl.excerpt" ;
@@ -732,7 +732,7 @@
     ].
 
 :readmeMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#readme_{readmeUrl.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#readme_{owner.excerpt}-{name.excerpt}-{readmeUrl.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -750,7 +750,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#contributingGuidelines_{contributingGuidelines.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#contributingGuidelines_{owner.excerpt}-{name.excerpt}-{contributingGuidelines.technique}" ;
         ];
         rml:objectMap [
             rml:reference "contributingGuidelines.excerpt" ;
@@ -759,7 +759,7 @@
     ].
 
 :contributionGuidelinesMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#contributingGuidelines_{contributingGuidelines.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#contributingGuidelines_{owner.excerpt}-{name.excerpt}-{contributingGuidelines.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -777,7 +777,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasExecutableInstructions_{invocation.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasExecutableInstructions_{owner.excerpt}-{name.excerpt}-{invocation.technique}" ;
         ];
         rml:objectMap [
             rml:reference "invocation.excerpt" ;
@@ -786,7 +786,7 @@
     ].
 
 :invocationMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutableInstructions_{invocation.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutableInstructions_{owner.excerpt}-{name.excerpt}-{invocation.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -804,7 +804,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasExecutableInstructions_{run.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasExecutableInstructions_{owner.excerpt}-{name.excerpt}-{run.technique}" ;
         ];
         rml:objectMap [
             rml:reference "run.excerpt" ;
@@ -813,7 +813,7 @@
     ].
 
 :invocation2MetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutableInstructions_{run.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasExecutableInstructions_{owner.excerpt}-{name.excerpt}-{run.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -831,7 +831,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#supportDetails_{support_channel.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#supportDetails_{owner.excerpt}-{name.excerpt}-{support_channel.technique}" ;
         ];
         rml:objectMap [
             rml:reference "support_channel.excerpt" ;
@@ -840,7 +840,7 @@
     ].
 
 :supportChannelMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#supportDetails_{support_channel.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#supportDetails_{owner.excerpt}-{name.excerpt}-{support_channel.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -858,7 +858,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#logo_{logo.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#logo_{owner.excerpt}-{name.excerpt}-{logo.technique}" ;
         ];
         rml:objectMap [
             rml:reference "logo.excerpt" ;
@@ -867,7 +867,7 @@
     ].
 
 :logoMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#logo_{logo.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#logo_{owner.excerpt}-{name.excerpt}-{logo.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -884,7 +884,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#hasDiagram_{image.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#hasDiagram_{owner.excerpt}-{name.excerpt}-{image.technique}" ;
         ];
         rml:objectMap [
             rml:reference "image.excerpt" ;
@@ -893,7 +893,7 @@
     ].
 
 :imageMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasDiagram_{image.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#hasDiagram_{owner.excerpt}-{name.excerpt}-{image.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -911,7 +911,7 @@
     rml:subjectMap :soft;
     rr:predicateObjectMap [
         rr:predicateMap [
-            rr:template "https://w3id.org/okn/o/sd#owner_{owner.technique}" ;
+            rr:template "https://w3id.org/okn/o/sd#owner_{owner.excerpt}-{name.excerpt}-{owner.technique}" ;
         ];
         rml:objectMap [
             rr:template "https://www.w3id.org/okn/i/Agent/{owner.excerpt}"
@@ -919,7 +919,7 @@
     ].
 
 :ownerMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#owner_{owner.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#owner_{owner.excerpt}-{name.excerpt}-{owner.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -965,7 +965,7 @@
   rml:subjectMap :source;
   rr:predicateObjectMap [
       rr:predicateMap [
-          rr:template "https://w3id.org/okn/o/sd#programmingLanguage_{languages.technique}" ;
+          rr:template "https://w3id.org/okn/o/sd#programmingLanguage_{owner.excerpt}-{name.excerpt}-{languages.technique}" ;
       ];
       rml:objectMap [
           rml:reference "languages.excerpt" ;
@@ -974,7 +974,7 @@
   ].
 
 :languageMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#programmingLanguage_{languages.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#programmingLanguage_{owner.excerpt}-{name.excerpt}-{languages.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
@@ -991,7 +991,7 @@
   rml:subjectMap :soft;
   rr:predicateObjectMap [
       rr:predicateMap [
-          rr:template "https://w3id.org/okn/o/sd#keywords_{topics.technique}" ;
+          rr:template "https://w3id.org/okn/o/sd#keywords_{owner.excerpt}-{name.excerpt}-{topics.technique}" ;
       ];
       rml:objectMap [
           rml:reference "topics.excerpt" ;
@@ -1000,7 +1000,7 @@
   ].
 
 :keywordsMetadataTM rml:logicalSource :ls ;
-  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#keywords_{topics.technique}" ] ;
+  rml:subjectMap [ rr:template "https://w3id.org/okn/o/sd#keywords_{owner.excerpt}-{name.excerpt}-{topics.technique}" ] ;
   rr:predicateObjectMap [
     rr:predicate em:confidence ;
     rml:objectMap [
