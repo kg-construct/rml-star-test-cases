@@ -6,6 +6,7 @@
 @prefix em: <https://www.w3id.org/okn/o/em#> .
 @prefix emi: <https://www.w3id.org/okn/i/> .
 @prefix sd: <https://w3id.org/okn/o/sd#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
 
@@ -14,7 +15,11 @@
   rml:referenceFormulation ql:JSONPath ;
   rml:iterator "$" .
 
-:soft rr:template "https://www.w3id.org/okn/i/Software/{owner.excerpt}/{name.excerpt}" .
+:soft rr:template "https://www.w3id.org/okn/i/Software/{owner.excerpt}/{name.excerpt}" ;
+   rr:class sd:Software.
+
+:source rr:template "https://www.w3id.org/okn/i/SourceCode/{owner.excerpt}/{name.excerpt}" ;
+  rr:class sd:SourceCode.
 
 :descriptionTM rml:logicalSource :ls;
     rml:subjectMap :soft;
@@ -735,3 +740,177 @@
     rr:predicate em:technique ;
     rml:objectMap [
       rml:reference "image.technique"] ] .
+
+
+:ownerTM rml:logicalSource :ls;
+    rml:subjectMap :soft;
+    rr:predicateObjectMap [
+        rr:predicate sd:owner ;
+        rml:objectMap [
+            rr:template "https://www.w3id.org/okn/i/Agent/{owner.excerpt}"
+        ]
+    ].
+
+:ownerMetadataTM rml:logicalSource :ls ;
+  rml:subjectMap [ rml:quotedTriplesMap :ownerTM ] ;
+  rr:predicateObjectMap [
+    rr:predicate em:confidence ;
+    rml:objectMap [
+      rml:reference "owner.confidence"] ] ;
+  rr:predicateObjectMap [
+    rr:predicate em:technique ;
+    rml:objectMap [
+      rml:reference "owner.technique"] ] .
+
+:ownerSubjectTM rml:logicalSource :ls;
+  rml:subjectMap [
+    rr:template "https://www.w3id.org/okn/i/Agent/{owner.excerpt}" ;
+  ];
+  rr:predicateObjectMap [
+      rr:predicate rdfs:label ;
+      rml:objectMap [
+          rml:reference "owner.excerpt" ;
+          rr:termType rr:Literal
+      ]
+  ].
+
+:sourceCodeRepositoryTM rml:logicalSource :ls;
+  rml:subjectMap :source;
+  rr:predicateObjectMap [
+      rr:predicate sd:codeRepository ;
+      rml:objectMap [
+          rml:reference "codeRepository.excerpt" ;
+          rr:datatype xsd:anyURI
+      ]
+  ].
+
+:linkSoftwareAndSourceTM rml:logicalSource :ls;
+  rml:subjectMap :soft;
+  rr:predicateObjectMap [
+      rr:predicate sd:hasSourceCode ;
+      rml:objectMap :source
+  ].
+
+:languageTM rml:logicalSource :ls;
+  rml:subjectMap :source;
+  rr:predicateObjectMap [
+      rr:predicate sd:programmingLanguage ;
+      rml:objectMap [
+          rml:reference "languages.excerpt" ;
+          rr:termType rr:Literal
+      ]
+  ].
+
+:languageMetadataTM rml:logicalSource :ls ;
+  rml:subjectMap [ rml:quotedTriplesMap :languageTM ] ;
+  rr:predicateObjectMap [
+    rr:predicate em:confidence ;
+    rml:objectMap [
+      rml:reference "languages.confidence"] ] ;
+  rr:predicateObjectMap [
+    rr:predicate em:technique ;
+    rml:objectMap [
+      rml:reference "languages.technique"] ] .
+
+:keywordsTM rml:logicalSource :ls;
+  rml:subjectMap :soft;
+  rr:predicateObjectMap [
+      rr:predicate sd:keywords ;
+      rml:objectMap [
+          rml:reference "topics.excerpt" ;
+          rr:termType rr:Literal
+      ]
+  ].
+
+:keywordsMetadataTM rml:logicalSource :ls ;
+  rml:subjectMap [ rml:quotedTriplesMap :keywordsTM ] ;
+  rr:predicateObjectMap [
+    rr:predicate em:confidence ;
+    rml:objectMap [
+      rml:reference "topics.confidence"] ] ;
+  rr:predicateObjectMap [
+    rr:predicate em:technique ;
+    rml:objectMap [
+      rml:reference "topics.technique"] ] .
+
+:versionTM rml:logicalSource :ls ;
+  rml:subjectMap [
+    rr:template "https://www.w3id.org/okn/i/SoftwareVersion/{owner.excerpt}/{name.excerpt}/{releases.excerpt.tagName}" ;
+    rr:class sd:SoftwareVersion
+  ];
+  rr:predicateObjectMap [
+      rr:predicate sd:tag ;
+      rml:objectMap [
+          rml:reference "releases.excerpt.tagName" ;
+          rr:termType rr:Literal
+      ]
+  ];
+  rr:predicateObjectMap [
+      rr:predicate sd:name ;
+      rml:objectMap [
+          rml:reference "releases.excerpt.name" ;
+          rr:termType rr:Literal
+      ]
+  ];
+  rr:predicateObjectMap [
+      rr:predicate sd:author ;
+      rml:objectMap [
+          rr:template "https://www.w3id.org/okn/i/Agent/{releases.excerpt.authorName}"
+      ]
+  ];
+  rr:predicateObjectMap [
+      rr:predicate sd:description ;
+      rml:objectMap [
+      rml:reference "releases.excerpt.body" ;
+      rr:termType rr:Literal
+      ]
+  ];
+  rr:predicateObjectMap [
+      rr:predicate sd:dateCreated ;
+      rml:objectMap [
+      rml:reference "releases.excerpt.dateCreated" ;
+      rr:datatype xsd:dateTime
+      ]
+  ];
+  rr:predicateObjectMap [
+      rr:predicate sd:datePublished ;
+      rml:objectMap [
+      rml:reference "releases.excerpt.datePublished" ;
+      rr:datatype xsd:dateTime
+      ]
+  ];
+  rr:predicateObjectMap [
+      rr:predicate sd:hasDownloadURL ;
+      rml:objectMap [
+      rml:reference "releases.excerpt.zipballUrl" ;
+      rr:datatype xsd:anyURI
+      ]
+  ];
+  rr:predicateObjectMap [
+      rr:predicate sd:identifier ;
+      rml:objectMap [
+      rml:reference "releases.excerpt.url" ;
+      rr:datatype xsd:anyURI
+      ]
+  ].
+
+:releaseAuthorTM rml:logicalSource :ls;
+  rml:subjectMap [
+    rr:template "https://www.w3id.org/okn/i/Agent/{releases.excerpt.authorName}" ;
+  ];
+  rr:predicateObjectMap [
+      rr:predicate rdfs:label ;
+      rml:objectMap [
+          rml:reference "releases.excerpt.authorName" ;
+          rr:termType rr:Literal
+      ]
+  ].
+
+:hasVersionTM rml:logicalSource :ls;
+  rml:subjectMap :soft ;
+  rr:predicateObjectMap [
+      rr:predicate sd:hasVersion ;
+      rml:objectMap [
+        rr:template "https://www.w3id.org/okn/i/SoftwareVersion/{owner.excerpt}/{name.excerpt}/{releases.excerpt.tagName}"
+      ];
+  ].
