@@ -1244,7 +1244,7 @@
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:subject ;
-        rml:objectMap :soft ;
+        rml:objectMap :source ;
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:predicate ;
